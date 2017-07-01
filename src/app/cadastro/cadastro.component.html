@@ -10,74 +10,82 @@
   <div class="container">
     <div class="col-sm-6">
         <h3>Faça seu cadastro, entraremos em contato.</h3>
-        <form id="formCadastro" data-toggle="validator" role="form">
+        <form id="formCadastro" data-toggle="validator" #f="ngForm"  role="form" (ngSubmit)="onSubmit(f)" >
             <div class="form-group row">
             <label for="name-text-input" class="col-2 col-form-label">Nome</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="Fernado Vilas Boas" id="name-text-input" required>
+                <input class="form-control" type="text" placeholder="Fernado Vilas Boas" 
+                    id="name" name="name" required [(ngModel)]="pessoa.nomeCompleto">
             </div>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
-            <label for="rsocial-text-input" class="col-2 col-form-label">Razão Social</label>
+            <label for="rsocial" class="col-2 col-form-label">Razão Social</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="Fernado Vilas LTDA" id="rsocial-text-input" required>
+                <input class="form-control" type="text" placeholder="Fernado Vilas LTDA" 
+                 id="rsocial" name="rsocial" required [(ngModel)]="pessoa.razaoSocial">
             </div>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
-            <label for="cnpj-text-input" class="col-2 col-form-label">CNPJ</label>
+            <label for="cnpj" class="col-2 col-form-label">CNPJ</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="60673875000186" id="cnpj-text-input" required>
+                <input class="form-control" type="text" placeholder="60673875000186" 
+                    id="cnpj" name="cnpj" required [(ngModel)]="pessoa.cnpj">
             </div>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
             <label for="telFixo-tel-input" class="col-2 col-form-label">Telefone Fixo</label>
             <div class="col-10">
-                <input class="form-control" type="tel" placeholder="(11)-9999-9999" id="telFixo-tel-input" required>
+                <input class="form-control" type="tel" placeholder="(11)-9999-9999" 
+                 id="telFixo" name="telFixo" [(ngModel)]="pessoa.telefoneFixo">
             </div>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
             <label for="telCel-tel-input" class="col-2 col-form-label">Telefone Celular</label>
             <div class="col-10">
-                <input class="form-control" type="tel" placeholder="(11)-99999-9999" id="telCel-tel-input" required>
+                <input class="form-control" type="tel" placeholder="(11)-99999-9999" 
+                id="telCel" name="telCel" required [(ngModel)]="pessoa.telefoneContato">
             </div>
             <div class="help-block with-errors"></div>
             </div>                
             <div class="form-group row">
-            <label for="email-email-input" class="col-2 col-form-label">E-mail</label>
+            <label for="email" class="col-2 col-form-label">E-mail</label>
             <div class="col-10">
-                <input class="form-control" type="email" placeholder="fernando@example.com" id="email-email-input" required>
+                <input class="form-control" type="email" placeholder="fernando@example.com" 
+                    id="email" name="email" required [(ngModel)]="pessoa.email">
             </div>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
-            <label for="quantidadeLinha-number-input" class="col-2 col-form-label">Quantidade</label>
+            <label for="quantidadeLinha" class="col-2 col-form-label">Quantidade</label>
             <div class="col-10">
-                <input class="form-control" type="number" placeholder="4" id="quantidadeLinha-number-input" required>
+                <input class="form-control" type="number" placeholder="4" 
+                    id="quantidadeLinha" name="quantidadeLinha" required [(ngModel)]="pessoa.quantidade">
             </div>
             <div class="help-block with-errors"></div>
             </div>        
             <div class="form-group row">
-            <label for="opAtual-text-input" class="col-2 col-form-label">Operadora Atual</label>
+            <label for="opAtual" class="col-2 col-form-label">Operadora Atual</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="Vivo" id="opAtual-text-input" required>
+                <input class="form-control" type="text" placeholder="Vivo" 
+                    id="opAtual" name="opAtual" required [(ngModel)]="pessoa.opAtual">
             </div>
             <div class="help-block with-errors"></div>
             </div>        
             <div class="form-group row">
             <label for="tipo-contato" class="col-2 col-form-label">Tipo contato</label>
-            <select class="form-control" id="tipo-contato" required>
-                <option>Whatsapp</option>
-                <option>Telefone</option>
-                <option>E-mail</option>
+            <select class="form-control" id="tipoContato" name="tipoContato" required [(ngModel)]="pessoa.tipoContato">
+                <option value="whatsapp">Whatsapp</option>
+                <option value="telefone">Telefone</option>
+                <option value="email">E-mail</option>
             </select>
             <div class="help-block with-errors"></div>
             </div>
             <div class="form-group row">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Cadastrar</button>
             </div>   
         </form>     
       </div>
