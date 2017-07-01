@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">TIM tela administrativa</a>
+    </div>
+  </div>
+</nav>
+<div class="container">           
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nome Completo</th>
+        <th>Telefone Fixo</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Quantidade</th>
+        <th>Operadora Atual</th>
+        <th>Razão Social</th>
+        <th>CNPJ</th>
+        <th>Tipo Contato</th>
+        <th>Vendeu</th>
+        <th>Ofertou</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes" >
+        <td>{{ cliente.nomeCompleto }}</td>
+        <td>{{ cliente.telefoneFixo }}</td>
+        <td>{{ cliente.telefoneContato }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.quantidade }}</td>
+        <td>{{ cliente.opAtual }}</td>
+        <td>{{ cliente.razaoSocial }}</td>
+        <td>{{ cliente.cnpj }}</td>
+        <td>{{ cliente.tipoContato }}</td>
+        <td>
+            <select class="form-control" id="tipoContato" name="tipoContato">
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" class="btn btn-success">Sim</button>
+            <button type="button" class="btn btn-danger">Não</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

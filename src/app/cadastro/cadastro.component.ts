@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CadastroService } from './cadastro.service';
-import { Pessoa } from './pessoa';
+import { Pessoa } from './../pessoa';
 
 @Component({
   selector: 'app-cadastro',
@@ -19,8 +19,6 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(form); 
-    console.log(this.pessoa.nomeCompleto);
     this.cadastroService.incluirPessoa(this.pessoa);
   }
 
