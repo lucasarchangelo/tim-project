@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CadastroService {
 
-  url = "http://localhost:8080/database/incluir"
+  url = "https://kritiunstudy.herokuapp.com/database/incluir"
   constructor(private http: Http) { }
 
   incluirPessoa(pessoa: Pessoa){
