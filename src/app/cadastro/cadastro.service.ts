@@ -13,8 +13,7 @@ export class CadastroService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions({ headers });
-    console.log(JSON.stringify(pessoa));
     return this.http.post(this.url, JSON.stringify(pessoa), options).
-      map(dados => dados.json()).subscribe(dados => console.log(dados));
+      map((res:Response)=> res.json());
   }
 }

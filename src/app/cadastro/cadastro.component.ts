@@ -19,7 +19,10 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.cadastroService.incluirPessoa(this.pessoa);
+    this.cadastroService.incluirPessoa(this.pessoa).subscribe(data => {
+      alert('Cadastro efetuado com sucesso!');
+      form.reset();
+    });
   }
 
 }
