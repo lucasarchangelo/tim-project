@@ -18,12 +18,12 @@
         <th>Razão Social</th>
         <th>CNPJ</th>
         <th>Tipo Contato</th>
-        <th>Vendeu</th>
-        <th>Ofertou</th>
+        <th>Status</th>
+        <th>Fechamento</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cliente of clientes" >
+      <tr *ngFor="let cliente of clientes let i = index">
         <td>{{ cliente.nomeCompleto }}</td>
         <td>{{ cliente.telefoneFixo }}</td>
         <td>{{ cliente.telefoneContato }}</td>
@@ -34,14 +34,16 @@
         <td>{{ cliente.cnpj }}</td>
         <td>{{ cliente.tipoContato }}</td>
         <td>
-            <select class="form-control" id="tipoContato" name="tipoContato">
-                <option value="1">Sim</option>
-                <option value="2">Não</option>
+            <select class="form-control" id="vendeu-component" name="vendeu-component" [(ngModel)]="cliente.status">
+                <option value="SEM_OFERTA"></option>
+                <option value="VENDIDO">Vendido</option>
+                <option value="PERDIDO">Perdido</option>
+                <option value="EM_NEGOCIACAO">Em negociação</option>
             </select>
         </td>
         <td>
-            <button type="button" class="btn btn-success">Sim</button>
-            <button type="button" class="btn btn-danger">Não</button>
+            <button type="button" class="btn btn-success" (click)="salvarProposta(cliente, i)">Salvar</button>
+            <button type="button" class="btn btn-danger" (click)="excluirProposta(cliente, i)">Excluir</button>
         </td>
       </tr>
     </tbody>

@@ -9,14 +9,20 @@ export class Pessoa {
     razaoSocial: string = "";
     cnpj: string = "";
     tipoContato: string = "";
-    ofertou: OfertaVenda = 0;
-    vendeu: OfertaVenda = 0;
+    fechamento: Fechamento = 0;
+    status: Status = 0;
     id: number;
-
 }
 
-enum OfertaVenda{
+export enum Status{
     SEM_OFERTA = 0,
-    SIM = 1,
-    NAO = 2
+    VENDIDO = 1,
+    PERDIDO = 2,
+    EM_NEGOCIACAO = 3
+}
+
+export enum Fechamento{
+    INICIADO = 0,
+    FINALZIADO = 1,
+    EXCLUIDO = 2    
 }

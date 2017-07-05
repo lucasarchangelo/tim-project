@@ -1,7 +1,7 @@
 <header>
   <div class="container-fluid">
     <div class="row">
-         <p style="text-align: center"><img src="assets/img/tim-header.jpeg" 
+         <p style="text-align: center"><img src="assets/img/tim-header.jpeg"
          alt="TIM" class="img-rounded" width="1140" height="509"></p>
     </div>
   </div>
@@ -9,12 +9,12 @@
 <section>
   <div class="container">
     <div class="col-sm-6">
-        <h3>Faça seu cadastro, entraremos em contato.</h3>
+        <h3>Atendimento somente para empresas.</h3>
         <form id="formCadastro" data-toggle="validator" #f="ngForm"  role="form" (ngSubmit)="onSubmit(f)" >
             <div class="form-group row">
             <label for="name-text-input" class="col-2 col-form-label">Nome</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="Fernado Vilas Boas" 
+                <input class="form-control" type="text" placeholder="" 
                     id="name" name="name" required [(ngModel)]="pessoa.nomeCompleto">
             </div>
             <div class="help-block with-errors"></div>
@@ -22,7 +22,7 @@
             <div class="form-group row">
             <label for="rsocial" class="col-2 col-form-label">Razão Social</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="Fernado Vilas LTDA" 
+                <input class="form-control" type="text" placeholder="" 
                  id="rsocial" name="rsocial" required [(ngModel)]="pessoa.razaoSocial">
             </div>
             <div class="help-block with-errors"></div>
@@ -30,7 +30,7 @@
             <div class="form-group row">
             <label for="cnpj" class="col-2 col-form-label">CNPJ</label>
             <div class="col-10">
-                <input class="form-control" type="text" placeholder="60673875000186" 
+                <input class="form-control" type="text" placeholder="" 
                     id="cnpj" name="cnpj" required [(ngModel)]="pessoa.cnpj">
             </div>
             <div class="help-block with-errors"></div>
@@ -38,7 +38,7 @@
             <div class="form-group row">
             <label for="telFixo-tel-input" class="col-2 col-form-label">Telefone Fixo</label>
             <div class="col-10">
-                <input class="form-control" type="tel" placeholder="(11)-9999-9999" 
+                <input class="form-control" type="tel" placeholder=""
                  id="telFixo" name="telFixo" [(ngModel)]="pessoa.telefoneFixo">
             </div>
             <div class="help-block with-errors"></div>
@@ -46,7 +46,7 @@
             <div class="form-group row">
             <label for="telCel-tel-input" class="col-2 col-form-label">Telefone Celular</label>
             <div class="col-10">
-                <input class="form-control" type="tel" placeholder="(11)-99999-9999" 
+                <input class="form-control" type="tel" placeholder="" 
                 id="telCel" name="telCel" required [(ngModel)]="pessoa.telefoneContato">
             </div>
             <div class="help-block with-errors"></div>
@@ -54,7 +54,7 @@
             <div class="form-group row">
             <label for="email" class="col-2 col-form-label">E-mail</label>
             <div class="col-10">
-                <input class="form-control" type="email" placeholder="fernando@example.com" 
+                <input class="form-control" type="email" placeholder="exemplo@exemplo.com" 
                     id="email" name="email" required [(ngModel)]="pessoa.email">
             </div>
             <div class="help-block with-errors"></div>
@@ -91,8 +91,9 @@
       </div>
       <div class="col-sm-6">
         <p style="text-align: center">TIM EMPRESAS - SOLICITE JÁ UMA PROPOSTA! 
-          ATENDEMOS TODO O BRASIL! Cel-WhatsApp: (11) 99999-9999</p><br />
-        <img src="assets/img/promo-dia.jpeg" alt="Promoção do dia" width="450" height="277">
+          ATENDEMOS TODO O BRASIL! Cel-WhatsApp: (11) 98223-0369</p><br />
+        <img src="assets/img/imagem_tim_1.jpeg" alt="Promoção do dia" width="450" height="277"> <br /><br />
+        <img src="assets/img/imagem_tim_2.jpeg" alt="Promoção do dia" width="450" height="277">
       </div>
   </div>
 </section>
