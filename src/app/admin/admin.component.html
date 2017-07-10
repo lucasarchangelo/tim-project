@@ -9,30 +9,32 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>Razão Social</th>
+        <th>CNPJ</th>
         <th>Nome Completo</th>
         <th>Telefone Fixo</th>
         <th>Telefone</th>
-        <th>Email</th>
         <th>Quantidade</th>
         <th>Operadora Atual</th>
-        <th>Razão Social</th>
-        <th>CNPJ</th>
+        <th>Email</th>
         <th>Tipo Contato</th>
+        <th>Data criação</th>
         <th>Status</th>
         <th>Fechamento</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let cliente of clientes let i = index">
+        <td>{{ cliente.razaoSocial }}</td>
+        <td>{{ cliente.cnpj }}</td>
         <td>{{ cliente.nomeCompleto }}</td>
         <td>{{ cliente.telefoneFixo }}</td>
         <td>{{ cliente.telefoneContato }}</td>
-        <td>{{ cliente.email }}</td>
         <td>{{ cliente.quantidade }}</td>
         <td>{{ cliente.opAtual }}</td>
-        <td>{{ cliente.razaoSocial }}</td>
-        <td>{{ cliente.cnpj }}</td>
+        <td>{{ cliente.email }}</td>
         <td>{{ cliente.tipoContato }}</td>
+        <td>{{ formatarData(cliente.dataCriacao) }}</td>
         <td>
             <select class="form-control" id="vendeu-component" name="vendeu-component" [(ngModel)]="cliente.status">
                 <option value="SEM_OFERTA"></option>

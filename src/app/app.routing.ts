@@ -7,7 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: CadastroComponent },
-    { path: 'timadminfernando', component: AdminComponent }
+    { path: 'fernandoconsultoria', component: AdminComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

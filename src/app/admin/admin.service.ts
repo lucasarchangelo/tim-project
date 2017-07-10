@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AdminService {
 
-  urlMain = "https://kritiunstudy.herokuapp.com/database";
+  urlMain = "https://fernando-endpoint.herokuapp.com/database";
   //urlMain = "http://localhost:8080/database";
 
   constructor(private http: Http) {

@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
 
   salvarProposta(pessoa: Pessoa, index: number){    
     pessoa.fechamento = Fechamento.INICIADO;
-
+    
     this.adminService.updateCliente(pessoa).subscribe(data => {
       alert('Cliente atualizado!');
       this.loadClients();
@@ -39,6 +39,10 @@ export class AdminComponent implements OnInit {
       this.loadClients();
       this.clientes.splice(index, 1);
     });
+  }
+
+  formatarData(long: number){
+    return new Date(long).toLocaleString('en-GB');
   }
 
 }

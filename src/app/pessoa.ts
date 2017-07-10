@@ -12,6 +12,7 @@ export class Pessoa {
     fechamento: Fechamento = 0;
     status: Status = 0;
     id: number;
+    dataCriacao: number=0;
 }
 
 export enum Status{
