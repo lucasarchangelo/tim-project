@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CadastroService } from './cadastro.service';
 import { Pessoa } from './../pessoa';
 
+declare var $: any;
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -19,9 +21,16 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit(form) {
+
+    $('#loading').modal({
+      keyboard: false,
+      backdrop: 'static'
+    });
+
     this.cadastroService.incluirPessoa(this.pessoa).subscribe(data => {
-      alert('Cadastro efetuado com sucesso!');
+      $('#loading').modal('hide');
       form.reset();
+      $('#sucess').modal();
     });
   }
 

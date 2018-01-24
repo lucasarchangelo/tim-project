@@ -9,12 +9,14 @@ import { CadastroService } from './cadastro/cadastro.service';
 import { AdminService } from './admin/admin.service';
 import { AdminComponent } from './admin/admin.component';
 import { routing } from './app.routing';
+import { PromocoesComponent } from './promocoes/promocoes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
-    AdminComponent
+    AdminComponent,
+    PromocoesComponent
   ],
   imports: [
     BrowserModule,

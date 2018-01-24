@@ -1,99 +1,67 @@
-<header>
-  <div class="container-fluid">
-    <div class="row">
-         <p style="text-align: center"><img src="assets/img/tim-header.jpeg"
-         alt="TIM" class="img-rounded" width="1140" height="509"></p>
-    </div>
-  </div>
-</header>
 <section>
-  <div class="container">
-    <div class="col-sm-6">
-        <h3>Atendimento somente para empresas.</h3>
-        <form id="formCadastro" data-toggle="validator" #f="ngForm"  role="form" (ngSubmit)="onSubmit(f)" >
-            <div class="form-group row">
-            <label for="name-text-input" class="col-2 col-form-label">Nome</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="" 
-                    id="name" name="name" required [(ngModel)]="pessoa.nomeCompleto">
+    <div class="container">
+        <h4 style="text-align: center">Atendimento somente para empresas.</h4>
+        <div class="col-sm-12">
+            <p style="text-align: center">TIM EMPRESAS - SOLICITE JÁ UMA PROPOSTA!<br />
+            Cel-WhatsApp: <b>(11) 98223-0369</b></p><br />
+        </div>
+        <form  id="formCadastro" data-toggle="validator" #f="ngForm"  role="form" (ngSubmit)="onSubmit(f)">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" placeholder="Nome completo" id="name" name="name" required [(ngModel)]="pessoa.nomeCompleto">
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="help-block with-errors"></div>
+            <div class="form-group">
+                <label for="razaoSocial">Razão social</label>
+                <input type="text" class="form-control" placeholder="Razão social" id="rsocial" name="rsocial" required [(ngModel)]="pessoa.razaoSocial">
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group row">
-            <label for="rsocial" class="col-2 col-form-label">Razão Social</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="" 
-                 id="rsocial" name="rsocial" required [(ngModel)]="pessoa.razaoSocial">
+            <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" class="form-control" placeholder="Apenas números" id="cnpj" name="cnpj" required [(ngModel)]="pessoa.cnpj">
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="help-block with-errors"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phoneNumber">Telefone fixo</label>
+                    <input type="text" class="form-control" placeholder="Apenas números" id="telFixo" name="telFixo" [(ngModel)]="pessoa.telefoneFixo">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="celphone">Telefone celular</label>
+                    <input type="text" class="form-control" placeholder="Apenas números" id="telCel" name="telCel" required [(ngModel)]="pessoa.telefoneContato">
+                    <div class="help-block with-errors"></div>
+                </div>
             </div>
-            <div class="form-group row">
-            <label for="cnpj" class="col-2 col-form-label">CNPJ</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="" 
-                    id="cnpj" name="cnpj" required [(ngModel)]="pessoa.cnpj">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" placeholder="E-mail" id="email" name="email" required [(ngModel)]="pessoa.email">
+                <div class="help-block with-errors"></div>
             </div>
-            <div class="help-block with-errors"></div>
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label for="currentService">Operadora atual</label>
+                    <input type="text" class="form-control" placeholder="Vivo" id="opAtual" name="opAtual" required [(ngModel)]="pessoa.opAtual">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="lineQuantity">Nr de linhas</label>
+                    <input type="number" class="form-control" placeholder="0" id="quantidadeLinha" name="quantidadeLinha" required [(ngModel)]="pessoa.quantidade">
+                    <div class="help-block with-errors"></div>
+                </div>
             </div>
-            <div class="form-group row">
-            <label for="telFixo-tel-input" class="col-2 col-form-label">Telefone Fixo</label>
-            <div class="col-10">
-                <input class="form-control" type="tel" placeholder=""
-                 id="telFixo" name="telFixo" [(ngModel)]="pessoa.telefoneFixo">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                        <label for="tipo-contato" class="col-2 col-form-label">Tipo contato</label>
+                        <select class="form-control" id="tipoContato" name="tipoContato" required [(ngModel)]="pessoa.tipoContato">
+                                <option value="whatsapp">Whatsapp</option>
+                                <option value="telefone">Telefone</option>
+                                <option value="email">E-mail</option>
+                        </select>
+                        <div class="help-block with-errors"></div>
+                </div>
             </div>
-            <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group row">
-            <label for="telCel-tel-input" class="col-2 col-form-label">Telefone Celular</label>
-            <div class="col-10">
-                <input class="form-control" type="tel" placeholder="" 
-                id="telCel" name="telCel" required [(ngModel)]="pessoa.telefoneContato">
-            </div>
-            <div class="help-block with-errors"></div>
-            </div>                
-            <div class="form-group row">
-            <label for="email" class="col-2 col-form-label">E-mail</label>
-            <div class="col-10">
-                <input class="form-control" type="email" placeholder="exemplo@exemplo.com" 
-                    id="email" name="email" required [(ngModel)]="pessoa.email">
-            </div>
-            <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group row">
-            <label for="quantidadeLinha" class="col-2 col-form-label">Quantidade</label>
-            <div class="col-10">
-                <input class="form-control" type="number" placeholder="4" 
-                    id="quantidadeLinha" name="quantidadeLinha" required [(ngModel)]="pessoa.quantidade">
-            </div>
-            <div class="help-block with-errors"></div>
-            </div>        
-            <div class="form-group row">
-            <label for="opAtual" class="col-2 col-form-label">Operadora Atual</label>
-            <div class="col-10">
-                <input class="form-control" type="text" placeholder="Vivo" 
-                    id="opAtual" name="opAtual" required [(ngModel)]="pessoa.opAtual">
-            </div>
-            <div class="help-block with-errors"></div>
-            </div>        
-            <div class="form-group row">
-            <label for="tipo-contato" class="col-2 col-form-label">Tipo contato</label>
-            <select class="form-control" id="tipoContato" name="tipoContato" required [(ngModel)]="pessoa.tipoContato">
-                <option value="whatsapp">Whatsapp</option>
-                <option value="telefone">Telefone</option>
-                <option value="email">E-mail</option>
-            </select>
-            <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group row">
             <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Cadastrar</button>
-            </div>   
-        </form>     
-      </div>
-      <div class="col-sm-6">
-        <p style="text-align: center">TIM EMPRESAS - SOLICITE JÁ UMA PROPOSTA!<br />
-        Cel-WhatsApp: <b>(11) 98223-0369</b></p><br />
-        <img src="assets/img/imagem_tim_1.jpeg" alt="Promoção do dia" width="550" height="377"> <br /><br />
-        <img src="assets/img/imagem_tim_2.jpeg" alt="Promoção do dia" width="550" height="377">
-      </div>
-  </div>
+        </form>
+    </div>
 </section>
